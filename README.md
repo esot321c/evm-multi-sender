@@ -1,6 +1,6 @@
 # EVM MultiSender
 
-This is an app that sends Ethereum and ERC-20 tokens to multipe recipients from a single wallet. The current implementation will require you to sign the transactions for each recipient, one by one. This is not idea for large airdrops but not bad for a smaller number of recipients. Future iterations will include a multisender smart contract so you only need to sign once. 
+An app that sends Ethereum and ERC-20 tokens to multiple recipients from a single wallet. The current implementation will require you to sign the transactions for each recipient, one by one. This is not idea for large airdrops but not bad for a smaller number of recipients. Future iterations will include a multisender smart contract so you only need to sign once. 
 
 ## Getting Started
 
@@ -13,4 +13,4 @@ This is an app that sends Ethereum and ERC-20 tokens to multipe recipients from 
 
 ## Adding other chains
 
-To add other blockchains besdies Base and Ethereum, you need to add the relevant data to `/lib/constants/evm.ts` and then import that data into `components/MultiSender.tsx` properly. 
+To add other blockchains besides Base and Ethereum, you need to add the relevant data to `/lib/constants/evm.ts` and then import that data into `components/MultiSender.tsx` properly. 
