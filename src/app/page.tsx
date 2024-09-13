@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MultiSender from "~/components/MultiSender";
 
 export default function Home() {

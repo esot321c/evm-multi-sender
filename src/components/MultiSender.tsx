@@ -3,7 +3,12 @@
 import React, { useState, useCallback } from 'react';
 import { ethers } from 'ethers';
 import { useWeb3ModalAccount, useWeb3ModalProvider } from '@web3modal/ethers/react';
-import { ERC20_ABI, TOKENS, ETHEREUM_MAINNET, BASE_MAINNET } from '~/lib/constants/evm';
+import { 
+  ERC20_ABI, 
+  TOKENS, 
+  // ETHEREUM_MAINNET, 
+  BASE_MAINNET 
+} from '~/lib/constants/evm';
 
 interface TokenAmount {
   token: string;
@@ -16,15 +21,15 @@ interface Recipient {
 }
 
 const NETWORKS = {
-  Ethereum: ETHEREUM_MAINNET,
+  // Ethereum: ETHEREUM_MAINNET,
   Base: BASE_MAINNET,
 };
 
 const MultiSender: React.FC = () => {
-  const { address, isConnected } = useWeb3ModalAccount();
+  const { isConnected } = useWeb3ModalAccount();
   const { walletProvider } = useWeb3ModalProvider();
   const [recipients, setRecipients] = useState<Recipient[]>([]);
-  const [selectedNetwork, setSelectedNetwork] = useState<keyof typeof NETWORKS>('Ethereum');
+  const [selectedNetwork, setSelectedNetwork] = useState<keyof typeof NETWORKS>('Base');
   const [status, setStatus] = useState<string>('');
   const [newRecipient, setNewRecipient] = useState<Recipient>({ address: '', tokenAmounts: [] });
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
